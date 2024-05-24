@@ -1,7 +1,13 @@
-This is a small repository on basic analysis of SP500 data
 
 
-asdfa
+Author: José Alberto Hernández
+Date: May 2024
 
 
-asdf
+This is a small repository for working with financial data and financial analysis.
+
+Everything developed in R.
+
+
+
+

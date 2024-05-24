@@ -48,6 +48,8 @@ getReturns <- function (symbol, first.date, last.date) {
 # Example: you get the last 5 years of SP500
 
 spy_log = getLogReturns(c('SPY'),Sys.Date()-5*252,Sys.Date())
+
+spy = spy_log
 spy_naturals = exp(spy)-1
 
 

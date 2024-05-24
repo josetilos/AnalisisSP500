@@ -4,9 +4,7 @@
 
 
 
-
-# Bolsa
-
+# First you load libraries
 
 if (!require(BatchGetSymbols)) install.packages('BatchGetSymbols')
 
@@ -14,6 +12,7 @@ if (!require(BatchGetSymbols)) install.packages('BatchGetSymbols')
 library(BatchGetSymbols)
 
 
+# This function returns the logorithm of daily returns for a batch symbol (ETF, stock, etc)
 getLogReturns <- function (symbol, first.date, last.date) {
   
   #freq.data <- dailyReturn
@@ -29,6 +28,7 @@ getLogReturns <- function (symbol, first.date, last.date) {
 }
 
 
+# This function returns the daily returns (natural, not logarithmic) for a batch symbol (ETF, stock, etc)
 getReturns <- function (symbol, first.date, last.date) {
   
   #freq.data <- dailyReturn
@@ -45,11 +45,12 @@ getReturns <- function (symbol, first.date, last.date) {
 
 
 
+# Example: you get the last 5 years of SP500
 
 spy_log = getLogReturns(c('SPY'),Sys.Date()-5*252,Sys.Date())
-
-
 spy_naturals = exp(spy)-1
+
+
 
 mean(spy_naturals)
 sharpe_daily = mean(spy_naturals)/sd(spy_naturals)
